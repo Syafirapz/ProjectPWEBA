@@ -1,4 +1,4 @@
-# Project PWEB A (I-SIgn)
+# Project PWEB A (I-Sign)
 Anggota Kelompok :
 1. Daffa Abdillah (2111521001)
 2. Darma Zidane Gusnambi (2111521023)
