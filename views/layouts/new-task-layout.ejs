@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	  <meta http-equiv="X-UA-Compatible"
+		  content="IE=edge">
+	  <meta name="viewport"
+		  content="width=device-width,
+				initial-scale=1.0">
+    <title>New Task</title>
+    <link rel="stylesheet" href="/stylesheet/buattugas.css" />
+	
+</head>
+<body>
+  <header>
+
+		<div class="logosec">
+			<div class="logo">I-Sign</div>
+		</div>
+
+    <div class="profilee-wrapper">
+      <div class="profilee">
+          <img src= "/asset/Profilee.png"
+                  class="dpicn"
+                  alt="dp">
+      </div>
+    </div> 
+	</header>
+  <div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options" >
+					<div class="nav-option option1" >
+						<img src="/asset/Home.png"
+							 class="nav-img" 
+							 alt="dashboard">
+						<a  href="/" ><h3> Dashboard</h3> </a>
+                  
+					</div>
+
+					<div class="nav-option option2">
+						<img src= "/asset/Profile.png"
+							class="nav-img"
+							alt="profile">
+							<a href="profil.html" ><h3>Profile</h3></a>
+						
+					</div>
+
+					<div class="nav-option option3">
+						<img src="/asset/Paper.png"
+							class="nav-img"
+							alt="task">
+							<a href="task1.html" >	<h3>Task</h3></a>
+						
+					
+					</div>
+					
+
+					<div class="nav-option option4">
+						<img src="/asset/Notification.png"
+							class="nav-img"
+							alt="notification">
+							<a href="notif.html" ><h3>Notification</h3></a>
+						
+						
+					</div>
+				</div>
+			</nav>
+		</div>
+        <div class="container">
+            <div class="task-header">
+                <h3>New task</h3>
+            </div>
+            <div class="task-body">
+                <form action="/add-form" method="post">
+                    <label for="fname">Subject</label>
+                    <input type="text" id="fname" name="title" placeholder="Your Subject..">
+                
+                    <label for="birthday">Deadline</label>
+                    <input type="datetime-local" id="dealine" name="deadline">
+                
+                    <label for="subject">Description</label>
+                    <textarea id="subject" name="description" placeholder="Write something.."></textarea>
+                
+                    <input type="submit" value="Submit">
+                  </form>
+            </div>
+        </div>
+	</div>
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

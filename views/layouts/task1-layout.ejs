@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+				initial-scale=1.0">
+    <title>Task</title>
+    <link rel="stylesheet" href="/stylesheet/task1.css" />
+
+</head>
+
+<body>
+    <header>
+
+        <div class="logosec">
+            <div class="logo">I-Sign</div>
+        </div>
+
+        <div class="profilee-wrapper">
+            <div class="profilee">
+                <img src="/asset/Profilee.png" class="dpicn" alt="dp">
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="navcontainer">
+            <nav class="nav">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1">
+                        <img src="/asset/Home.png" class="nav-img" alt="dashboard">
+                        <a class="navigasi" href="/">
+                            <h3> Dashboard</h3>
+                        </a>
+
+                    </div>
+
+                    <div class="nav-option option2">
+                        <img src="/asset/Profile.png" class="nav-img" alt="profile">
+                        <a href="/profil">
+                            <h3>Profile</h3>
+                        </a>
+
+                    </div>
+
+                    <div class="nav-option option3">
+                        <img src="/asset/Paper.png" class="nav-img" alt="task">
+                        <a href="task1.html">
+                            <h3>Task</h3>
+                        </a>
+
+
+                    </div>
+
+
+                    <div class="nav-option option4">
+                        <img src="/asset/Notification.png" class="nav-img" alt="notification">
+                        <a href="/notifikasi">
+                            <h3>Notification</h3>
+                        </a>
+
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <% if (messages.success) { %>
+                <div class="alert alert-success" role="alert"><%- messages.success %></div>
+                <% } %>
+                    <div class="main-body">
+
+                        <div class="row">
+                            <div class="pill-nav">
+                                <a class="active" href="/pengumuman">
+                                    <h3>Upcoming</h3>
+                                </a>
+                                <a href="/submission">
+                                    <h3>Completed</h3>
+                                </a>
+                                <a class="split" href="/add-form">
+                                    <h3>New Task</h3>
+                                </a>
+                            </div>
+                            <div class="task-body">
+                                <% if(data.length> 0){
+                                    for(var i = 0; i < data.length; i++){%>
+                                        <div class="task-upcoming">
+                                        
+                                            <h3 class="t-op">
+                                                <%= data[i].title%>
+                                            </h3>
+                                            <p>
+                                                From : <%= data[i].username%> <br />
+                                                    Deadline : <%= moment(data[i].deadline). format("DD-MM-YYYY")%> 
+                                            </p>
+                                            <div class="button">
+                                                <button
+                                                    onclick="document.getElementById('<%= data[i].form_id %>').style.display='block'"
+                                                    class="submit-btn">Upload</button>
+                                                <div id="<%= data[i].form_id %>" class="modal">
+
+                                                    <div class="modal-content animate">
+                                                        <div class="modal-header">
+                                                            <button style="float: right; width: 5%;" onclick="getModal('<%= data[i].form_id %>')"
+                                                                class="close" title="Close Modal">&times;</button>
+                                                            <h3>Upload Task</h3>
+                                                        </div>
+                                                        <div class="container">
+
+                                                            <div class="modal-body">
+                                                                <form action="/upload" enctype="multipart/form-data"
+                                                                    method="post">
+                                                                    <input type="hidden" name="form_id"
+                                                                        value="<%= data[i].form_id %>">
+                                                                    <input type="file" id="myFile" name="uploaded_file">
+                                                                    <input type="submit">
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                    </div>
+                                                    <button type="button" disabled>Submit</button>
+                                                </div>
+                                                <br>
+                                            </div>
+
+                                            <%} }%>
+                                                <!-- <div class="task-upcoming">
+
+                                                <h3 class="t-op">Dasar Sistem Informasi</h3>
+                                                From : Fajri, M.Kom <br />
+                                                Deadline : 26 April 2023
+                                                <div class="button">
+                                                    <button
+                                                        onclick="document.getElementById('id01').style.display='block'"
+                                                        class="submit-btn">Upload</button>
+                                                    <div id="id01" class="modal">
+                                                        <span
+                                                            onclick="document.getElementById('id01').style.display='none'"
+                                                            class="close" title="Close Modal">&times;</span>
+                                                        <form class="modal-content animate" action="/action_page.php">
+                                                            <div class="container">
+                                                                <div class="modal-header">
+                                                                    <h3>Upload Task</h3>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <form action="/action_page.php">
+                                                                        <input type="file" id="myFile" name="filename">
+                                                                        <input type="submit">
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <button type="button" disabled>Submit</button>
+                                                </div>
+                                                <br>
+                                            </div> -->
+                                        </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>
+            var modal;
+            function getModal(id) {
+                // alert(id);
+                modal = document.getElementById(id);
+
+                //    window.onclick = function (event) {
+                //        if (event.target == modal) {
+                modal.style.display = "none";
+                //        }
+                //    }
+            }
+        </script>
+
+</body>
+
+</html>

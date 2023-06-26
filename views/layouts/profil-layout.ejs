@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	  <meta http-equiv="X-UA-Compatible"
+		  content="IE=edge">
+	  <meta name="viewport"
+		  content="width=device-width,
+				initial-scale=1.0">
+    <title>Edit Profil</title>
+    <link rel="stylesheet" href="/stylesheet/ubahprofil.css" />
+</head>
+<body>
+  <header>
+
+		<div class="logosec">
+			<div class="logo">I-Sign</div>
+		</div>
+
+    <div class="profilee-wrapper">
+      <div class="profilee">
+          <img src="/asset/Profilee.png"
+                  class="dpicn"
+                  alt="dp">
+      </div>
+    </div> 
+	</header>
+  <div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option1">
+						<img src="/asset/Home.png"
+							class="nav-img"
+							alt="dashboard">
+						<a class="=navigasi" href="/" ><h3> Dashboard</h3> </a>
+					</div>
+
+					<div class="nav-option option2">
+						<img src= "/asset/Profile.png"
+							class="nav-img"
+							alt="profile">
+							<a href="/profil" ><h3>Profile</h3></a>
+					</div>
+
+					<div class="nav-option option3">
+						<img src="/asset/Paper.png"
+							class="nav-img"
+							alt="task">
+							<a href="/pengumuman">	<h3>Task</h3></a>
+					</div>
+
+					<div class="nav-option option4">
+						<img src="/asset/Notification.png"
+							class="nav-img"
+							alt="notification">
+							<a href="/notifikasi" ><h3>Notification</h3></a>
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<div class="main-body">
+				  <div class="row1 gutters-sm">
+					<div class="col-md-4 mb-3">
+					  <div class="card">
+						<div class="card-body">
+						  <div class="profile-box">
+							<img src="/asset/Profilee.png" alt="Admin" class="rounded-circle" width="150">
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="col-md-8">
+					  <div class="card mb-3">
+						<div class="card-body">
+						  <div class="row">
+							<div class="col-sm-3">
+							  <h4 class="mb-0">Username</h4>
+							</div>
+							<div class="col-sm-9 text-secondary" >
+								<%= username %>
+							</div>
+						  </div>
+						  <hr>
+						  <div class="row">
+							<div class="col-sm-3">
+							  <h4 class="mb-0">Email</h4>
+							</div>
+							<div class="col-sm-9 text-secondary">
+							  <%= email %>
+							</div>
+						  </div>
+						  <hr>
+						  <div class="row">
+							<div class="col-sm-3">
+							  <h4 class="mb-0">No Hp</h4>
+							</div>
+							<div class="col-sm-9 text-secondary">
+							  <%= noHp %>
+							</div>
+						  </div>
+						  <hr>
+
+						  <div class="button">
+							<a type="button"  href="/edit-profil/<%= user_id%>">
+								<button  type="button"  class="submit-btn">Edit</button>
+							</a>
+							<a type="button"  href="/logout">
+								<button  type="button"  class="submit-btn">Logout</button>
+							</a>
+							<!-- <button type="submit" class="submit-btn">Logout</button> -->
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			</div> 
+	</div>
+    
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="bootstrap/js/bootstrap.bundle.js.map"></script>
+	<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="bootstrap/js/bootstrap.bundle.min.js.map"></script>
+	<script src="bootstrap/js/bootstrap.esm.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

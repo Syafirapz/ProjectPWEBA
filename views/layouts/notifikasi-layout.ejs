@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,
+				initial-scale=1.0">
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="/stylesheet/notif.css">
+
+</head>
+
+<body>
+
+	<header>
+
+		<div class="logosec">
+			<div class="logo">I-Sign</div>
+		</div>
+		<div class="profilee-wrapper">
+			<div class="profilee">
+				<img src="/asset/Profilee.png" class="dpicn" alt="dp">
+			</div>
+		</div>
+	</header>
+
+	<div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+				<div class="nav-upper-options">
+					<div class="nav-option option1">
+						<img src="/asset/Home.png" class="nav-img" alt="dashboard">
+						<a class="=navigasi" href="/">
+							<h3> Dashboard</h3>
+						</a>
+
+					</div>
+
+					<div class="nav-option option2">
+						<img src="/asset/Profile.png" class="nav-img" alt="profile">
+						<a href="/profil">
+							<h3>Profile</h3>
+						</a>
+
+					</div>
+
+					<div class="nav-option option3">
+						<img src="/asset/Paper.png" class="nav-img" alt="task">
+						<a href="/pengumuman">
+							<h3>Task</h3>
+						</a>
+
+
+					</div>
+
+
+					<div class="nav-option option4">
+						<img src="/asset/Notification.png" class="nav-img" alt="notification">
+						<a href="/notifikasi">
+							<h3>Notification</h3>
+						</a>
+
+
+					</div>
+				</div>
+			</nav>
+		</div>
+		<div class="main">
+			<div class="box-container">
+				<div class="notif-container">
+					<div class="notif-header">
+						<h1 class="notif">Notification</h1>
+					</div>
+					<div class="notif-body">
+						<% if(data.length> 0){
+							for(var i = 0; i < data.length; i++){%>
+						<div class="notification">
+							<h3 class="t-op">From : <%= data[i].username%></h3>
+							<p>
+								Mengupload <%= data[i].title%> <br />
+								Deadline  : <%= moment(data[i].deadline). format("DD-MM-YYYY")%> 
+							</p>
+							<br>
+						</div>
+						
+						<%}} else { %>
+
+							<div class="notification">
+								<h3 class="t-op" style="text-align:center;">Belum ada notifikasi</h3>
+								
+								<br>
+							</div>
+
+							<% }%>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
